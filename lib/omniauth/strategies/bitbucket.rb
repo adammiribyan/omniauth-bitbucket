@@ -19,6 +19,10 @@ module OmniAuth
       # providers.
       uid { raw_info['username'] }
 
+      extra do
+        { :raw_info => raw_info }
+      end
+
       info do
         {
           :name => "#{raw_info['first_name']} #{raw_info['last_name']}",
